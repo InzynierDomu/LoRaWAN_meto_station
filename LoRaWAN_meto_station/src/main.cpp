@@ -15,7 +15,7 @@
 
 Measurements* m_Measurements;
 LoRaWAN* m_LoRaWAN;
-Results m_results;
+Results m_Results;
 
 void setup() {
   Serial.begin(115200);
@@ -29,5 +29,6 @@ void setup() {
 }
 
 void loop() {
-  m_Measurements->Measure(&m_results);
+  m_Measurements->Measure(&m_Results);
+  m_LoRaWAN->Send_msg_measurements(&m_Results);
 }

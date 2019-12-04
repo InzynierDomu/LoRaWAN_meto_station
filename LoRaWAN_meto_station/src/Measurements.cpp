@@ -92,5 +92,5 @@ void Measurements::Ds_thermometer_measure(Results* results)
 
 void Measurements::Light_measure(Results* results)
 {
-
+	results->m_light_intensity = analogRead(Pins::Light_intensity);
 }

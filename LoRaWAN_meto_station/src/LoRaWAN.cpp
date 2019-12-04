@@ -54,16 +54,37 @@ void LoRaWAN::Setup()
 
 void LoRaWAN::Send_msg_measurements(const Results* result)
 {
-
+	String msg = Convert_mesurements_to_string(result);
+	Send_msg(msg);
 }
 
 void LoRaWAN::Send_msg(String msg)
 {
-	
+	for (unsigned int i = 0; i < msg.length(); i++) 
+	{		
+		Serial.print(msg[i] >> 4, HEX);
+	    Serial.print(msg[i] & 0xF, HEX);
+	}
+	Serial.println();
+
+	m_modem.dataRate(0);	//TODO: optional
+	delay(1000);
+
+	int err;
+	m_modem.beginPacket();
+	m_modem.print(msg);
+	err = m_modem.endPacket(true);
+	Serial.println(err);
 }
 
 String LoRaWAN::Convert_mesurements_to_string(const Results* results)
 {
+	String msg;
+	msg+= "T" + String(results->m_Temperature_ds);
+	msg+= "H" + String(results->m_Humidity);
+	msg+= "P" + String(results->m_Pressure);
+	msg+= "L" + String(results->m_light_intensity);
 
+	return msg;
 }
 
