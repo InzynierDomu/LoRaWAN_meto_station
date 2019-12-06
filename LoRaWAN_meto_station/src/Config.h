@@ -31,7 +31,7 @@ namespace Config
 	const String App_s_key ="";  	///< Application session key
 
 	const int Uplink_port = 1;   ///< Port for uplink
-	const int Uplink_interval = 10000;   ///< Uplink interval in miliseconds
+	const int Uplink_interval = 600000;   ///< Uplink interval in miliseconds
 	const bool Freeze_data_rate = true;
 
 //TODO: bools for every sensor

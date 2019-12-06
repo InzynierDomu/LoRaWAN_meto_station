@@ -1,4 +1,4 @@
- /**
+/**
  * @file LoRaWAN_meteo_station.ino
  * @brief LoRaWAN meteo station main
  * @author by Szymon Markiewicz
@@ -13,11 +13,12 @@
 #include "LoRaWAN.h"
 #include "Measurements.h"
 
-Measurements* m_Measurements;
-LoRaWAN* m_LoRaWAN;
+Measurements *m_Measurements;
+LoRaWAN *m_LoRaWAN;
 Results m_Results;
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   m_Measurements = new Measurements();
   m_LoRaWAN = new LoRaWAN();
@@ -28,7 +29,8 @@ void setup() {
   Serial.println("setup end");
 }
 
-void loop() {
+void loop()
+{
   m_Measurements->Measure(&m_Results);
   m_LoRaWAN->Send_msg_measurements(&m_Results);
 }
