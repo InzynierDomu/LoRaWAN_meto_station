@@ -76,6 +76,7 @@ void LoRaWAN::Send_msg(String msg)
 	m_modem.print(msg);
 	err = m_modem.endPacket(true);
 	Serial.println(err);
+	m_modem.sleep();
 }
 
 String LoRaWAN::Convert_mesurements_to_string(const Results *results)

@@ -12,6 +12,7 @@
 #include "Results.h"
 #include "LoRaWAN.h"
 #include "Measurements.h"
+#include "ArduinoLowPower.h"
 
 Measurements *m_Measurements;
 LoRaWAN *m_LoRaWAN;
@@ -33,4 +34,6 @@ void loop()
 {
   m_Measurements->Measure(&m_Results);
   m_LoRaWAN->Send_msg_measurements(&m_Results);
+  delay(Config::Uplink_interval);
+//	LowPower.deepSleep(Config::Uplink_interval);
 }
