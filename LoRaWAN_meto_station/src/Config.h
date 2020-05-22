@@ -18,23 +18,21 @@ enum class Authorization
 #include <Arduino.h>
 namespace Config
 {
-	const Authorization Auth = Authorization::ABP;   ///< LoRaWAN authorization method, ABP or OTAA
+	const Authorization auth = Authorization::ABP;   ///< LoRaWAN authorization method, ABP or OTAA
 
 	/*OTAA credential*/
-	const String Dev_eui = "";   ///< Device EUI
-	const String App_eui = "";   ///< Application EUI
-	const String App_key = "";   ///< Application key
+	const String dev_eui = "";   ///< Device EUI
+	const String app_eui = "";   ///< Application EUI
+	const String app_key = "";   ///< Application key
 
 	/*ABP credential*/
-	const String Dev_adr ="";  	///< Device adress
-	const String Nw_s_key ="";  	///< Network session key
-	const String App_s_key ="";  	///< Application session key
+	const String dev_adr = "";  	///< Device adress
+	const String nw_s_key = "";  	///< Network session key
+	const String app_s_key = "";  	///< Application session key
 
-	const int Uplink_port = 1;   ///< Port for uplink
-	const int Uplink_interval = 600000;   ///< Uplink interval in miliseconds
-	const bool Freeze_data_rate = true;
-
-//TODO: bools for every sensor
-}
+	const int uplink_port = 1;   ///< Port for uplink
+	const int uplink_interval = 36000;   ///< Uplink interval in miliseconds
+	const bool const_data_rate = true;
+}// namespace Config
 
 #endif /* CONFIG_H_ */

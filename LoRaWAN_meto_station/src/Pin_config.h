@@ -11,8 +11,8 @@
 
 namespace Pins
 {
-const byte One_wire = 0;		 ///< DS18B20 thermometer pin
-const byte Light_intensity = A6; ///< Photoresistor pin
+const byte one_wire = 0;	    ///< DS18B20 thermometer pin
+const byte light_sensor = A6;   ///< Photoresistor pin
 } // namespace Pins
 
 #endif /* PINCONFIG_H_ */

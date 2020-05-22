@@ -10,14 +10,14 @@
 
 Measurements::Measurements()
 {
-	m_Onewire = new OneWire(Pins::One_wire);
-	m_Ds = new DS18B20(Pins::One_wire);
+	m_one_wire = new OneWire(Pins::one_wire);
+	m_ds_sensor = new DS18B20(Pins::one_wire);
 }
 
 Measurements::~Measurements()
 {
-	delete m_Onewire;
-	delete m_Ds;
+	delete m_one_wire;
+	delete m_ds_sensor;
 }
 
 void Measurements::Init_sensors()
@@ -30,45 +30,43 @@ void Measurements::Measure(Results *results)
 {
 	Ds_thermometer_measure(results);
 	Bme_measuere(results);
+	Light_measure(results);
 }
 
 void Measurements::Bme_init()
 {
-	unsigned status;
-
-	status = m_Bme.begin();
+	unsigned status = m_bme_sensor.begin(BME280_ADDRESS_ALTERNATE);
 	if (!status)
 	{
 		Serial.println("Could not find a valid BME280 sensor, check wiring, address, sensor ID!");
 		Serial.print("SensorID was: 0x");
-		Serial.println(m_Bme.sensorID(), 16);
+		Serial.println(m_bme_sensor.sensorID(), 16);
 		Serial.print("        ID of 0xFF probably means a bad address, a BMP 180 or BMP 085\n");
 		Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
 		Serial.print("        ID of 0x60 represents a BME 280.\n");
 		Serial.print("        ID of 0x61 represents a BME 680.\n");
-		while (1)
-			;
-		//TODO: erro handling
+		while (1);
+		//TODO: error handling
 	}
 }
 
 void Measurements::Bme_measuere(Results *results)
 {
-	results->m_Temperature_bme = m_Bme.readTemperature();
-	results->m_Pressure = m_Bme.readPressure() / 100;
-	results->m_Humidity = m_Bme.readHumidity();
+	results->m_temperature_bme = m_bme_sensor.readTemperature();
+	results->m_pressure = m_bme_sensor.readPressure() / 100;
+	results->m_humidity = m_bme_sensor.readHumidity();
 }
 
 void Measurements::Ds_thermometer_init()
 {
-	Serial.print("serch temp");
-	m_Onewire->reset_search();
-	while (m_Onewire->search(m_Ds_address))
+	Serial.print("Serch thermometer");
+	m_one_wire->reset_search();
+	while (m_one_wire->search(m_ds_address))
 	{
-		if (m_Ds_address[0] != 0x28)
+		if (m_ds_address[0] != 0x28)
 			continue;
 
-		if (OneWire::crc8(m_Ds_address, 7) != m_Ds_address[7])
+		if (OneWire::crc8(m_ds_address, 7) != m_ds_address[7])
 		{
 			Serial.println(F("1-Wire bus connection error!"));
 			break;
@@ -77,22 +75,21 @@ void Measurements::Ds_thermometer_init()
 		for (byte i = 0; i < 8; i++)
 		{
 			Serial.print(F("0x"));
-			Serial.print(m_Ds_address[i], HEX);
+			Serial.print(m_ds_address[i], HEX);
 
 			if (i < 7)
 				Serial.print(F(", "));
 		}
 		Serial.println();
 	}
-	//	selected = ds.select(address);
 }
 
 void Measurements::Ds_thermometer_measure(Results *results)
 {
-	results->m_Temperature_ds = m_Ds->getTempC();
+	results->m_temperature_ds = m_ds_sensor->getTempC();
 }
 
 void Measurements::Light_measure(Results *results)
 {
-	results->m_light_intensity = analogRead(Pins::Light_intensity);
+	results->m_light_intensity  = map(analogRead(Pins::light_sensor), 0, 1023, 0, 100);
 }

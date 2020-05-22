@@ -14,26 +14,24 @@
 #include "Measurements.h"
 #include "ArduinoLowPower.h"
 
-Measurements *m_Measurements;
-LoRaWAN *m_LoRaWAN;
-Results m_Results;
+Measurements *m_measurements;
+LoRaWAN *m_lorawan;
+Results m_results;
 
 void setup()
 {
-  Serial.begin(115200);
-  m_Measurements = new Measurements();
-  m_LoRaWAN = new LoRaWAN();
+  Serial.begin(9600);
+  delay(60000);
+  m_measurements = new Measurements();
+  m_lorawan = new LoRaWAN();
 
-  m_Measurements->Init_sensors();
-  m_LoRaWAN->Setup();
-
-  Serial.println("setup end");
+  m_measurements->Init_sensors();
+  m_lorawan->Setup();
 }
 
 void loop()
 {
-  m_Measurements->Measure(&m_Results);
-  m_LoRaWAN->Send_msg_measurements(&m_Results);
-  delay(Config::Uplink_interval);
-//	LowPower.deepSleep(Config::Uplink_interval);
+  m_measurements->Measure(&m_results);
+  m_lorawan->Send_msg_measurements(&m_results);
+	LowPower.deepSleep(Config::uplink_interval);
 }

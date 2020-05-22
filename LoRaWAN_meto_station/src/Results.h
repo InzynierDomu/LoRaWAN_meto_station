@@ -9,13 +9,12 @@
 #ifndef RESULTS_H_
 #define RESULTS_H_
 
-class Results
+struct Results
 {
-public:
-	float m_Temperature_ds;
-	float m_Temperature_bme;
-	int m_Humidity;
-	int m_Pressure;
+	float m_temperature_ds;	
+	float m_temperature_bme;
+	int m_humidity;
+	int m_pressure;
 	int m_light_intensity;
 };
 

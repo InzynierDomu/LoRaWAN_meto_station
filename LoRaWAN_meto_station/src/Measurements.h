@@ -9,7 +9,7 @@
 #ifndef MEASUREMENTS_H_
 #define MEASUREMENTS_H_
 
-#include <Adafruit_BME280.h> //TODO: change to local
+#include <Adafruit_BME280.h>
 #include <OneWire.h>
 #include "Pin_config.h"
 #include "Config.h"
@@ -31,10 +31,10 @@ private:
 	void Ds_thermometer_measure(Results *results);
 	void Light_measure(Results *results);
 
-	byte m_Ds_address[8];
-	Adafruit_BME280 m_Bme;
-	OneWire *m_Onewire;
-	DS18B20 *m_Ds;
+	Adafruit_BME280 m_bme_sensor;
+	OneWire *m_one_wire;
+	DS18B20 *m_ds_sensor;
+	byte m_ds_address[8];
 };
 
 #endif /* MEASUREMENTS_H_ */
