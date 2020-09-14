@@ -1,0 +1,309 @@
+[
+    {
+        "id": "a4f2f009.6065b",
+        "type": "ttn uplink",
+        "z": "49633efd.5829a",
+        "name": "uplink",
+        "app": "7755435c.7d44bc",
+        "dev_id": "meto",
+        "field": "",
+        "x": 458.5,
+        "y": 301,
+        "wires": [
+            [
+                "17475a2.dd77ca6",
+                "1c2318d1.617527",
+                "56f80b1a.8f1554"
+            ]
+        ]
+    },
+    {
+        "id": "75699b5e.c92824",
+        "type": "ui_chart",
+        "z": "49633efd.5829a",
+        "name": "",
+        "group": "c15a098f.0623d8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 981.5,
+        "y": 228,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17475a2.dd77ca6",
+        "type": "change",
+        "z": "49633efd.5829a",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.temp",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 745.5,
+        "y": 301,
+        "wires": [
+            [
+                "75699b5e.c92824",
+                "c71fd8f4.447b78"
+            ]
+        ]
+    },
+    {
+        "id": "1c2318d1.617527",
+        "type": "change",
+        "z": "49633efd.5829a",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.hum",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 745,
+        "y": 373,
+        "wires": [
+            [
+                "f2339a12.d73428",
+                "c721c466.857a08"
+            ]
+        ]
+    },
+    {
+        "id": "56f80b1a.8f1554",
+        "type": "change",
+        "z": "49633efd.5829a",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.pres",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 751,
+        "y": 450,
+        "wires": [
+            [
+                "4f29d1d8.74fb3",
+                "33182b77.29b4c4"
+            ]
+        ]
+    },
+    {
+        "id": "f2339a12.d73428",
+        "type": "ui_chart",
+        "z": "49633efd.5829a",
+        "name": "",
+        "group": "c15a098f.0623d8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Wilgotność powietrza",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1012.5,
+        "y": 333,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f29d1d8.74fb3",
+        "type": "ui_chart",
+        "z": "49633efd.5829a",
+        "name": "",
+        "group": "c15a098f.0623d8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Ciśnienie",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 966,
+        "y": 449,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c71fd8f4.447b78",
+        "type": "ui_text",
+        "z": "49633efd.5829a",
+        "group": "d3548dd5.73c16",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperatura: ",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-spread",
+        "x": 988.5,
+        "y": 285,
+        "wires": []
+    },
+    {
+        "id": "33182b77.29b4c4",
+        "type": "ui_text",
+        "z": "49633efd.5829a",
+        "group": "d3548dd5.73c16",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Ciśnienie",
+        "format": "{{msg.payload}} hPa",
+        "layout": "row-spread",
+        "x": 965.5,
+        "y": 496,
+        "wires": []
+    },
+    {
+        "id": "c721c466.857a08",
+        "type": "ui_text",
+        "z": "49633efd.5829a",
+        "group": "d3548dd5.73c16",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Wilgotność powietrza:",
+        "format": "{{msg.payload}} %",
+        "layout": "row-spread",
+        "x": 1015,
+        "y": 388,
+        "wires": []
+    },
+    {
+        "id": "c15a098f.0623d8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Historia",
+        "tab": "d56d3987.a48938",
+        "order": 5,
+        "disp": true,
+        "width": 7,
+        "collapse": false
+    },
+    {
+        "id": "d3548dd5.73c16",
+        "type": "ui_group",
+        "z": "",
+        "name": "Ostatni pomiar",
+        "tab": "d56d3987.a48938",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d56d3987.a48938",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Balkon",
+        "icon": "fa-tree",
+        "disabled": false,
+        "hidden": false
+    }
+]
