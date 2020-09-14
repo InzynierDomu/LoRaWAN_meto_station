@@ -1,0 +1,233 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x03_Male J3
+U 1 1 5E2D63A7
+P 6300 4050
+F 0 "J3" H 6272 4074 50  0000 R CNN
+F 1 "Conn_01x03_Male" H 6272 3983 50  0000 R CNN
+F 2 "obbo_footprints:PinHeader_1x03_P2.54mm_Vertical_PAD" H 6300 4050 50  0001 C CNN
+F 3 "~" H 6300 4050 50  0001 C CNN
+	1    6300 4050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J2
+U 1 1 5E2D6817
+P 2700 3750
+F 0 "J2" H 2808 3931 50  0000 C CNN
+F 1 "Conn_01x02_Male" H 2808 3840 50  0000 C CNN
+F 2 "obbo_footprints:PinHeader_1x02_P2.54mm_Vertical_PAD" H 2700 3750 50  0001 C CNN
+F 3 "~" H 2700 3750 50  0001 C CNN
+	1    2700 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5E2D726E
+P 5750 3650
+F 0 "R2" H 5820 3696 50  0000 L CNN
+F 1 "10k" H 5820 3605 50  0000 L CNN
+F 2 "obbo_footprints:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal_PAD" V 5680 3650 50  0001 C CNN
+F 3 "~" H 5750 3650 50  0001 C CNN
+	1    5750 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E2D76C1
+P 3250 3300
+F 0 "R1" H 3320 3346 50  0000 L CNN
+F 1 "10k" H 3320 3255 50  0000 L CNN
+F 2 "obbo_footprints:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal_PAD" V 3180 3300 50  0001 C CNN
+F 3 "~" H 3250 3300 50  0001 C CNN
+	1    3250 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L obbo_Module:Ardiuno_MKR1300 U1
+U 1 1 5E2D7A32
+P 4350 3850
+F 0 "U1" H 4700 2700 50  0000 C CNN
+F 1 "Ardiuno_MKR1300" H 4700 2600 50  0000 C CNN
+F 2 "obbo_footprints:Arduino_MKR1300_Oval" H 4750 4950 50  0001 L CIN
+F 3 "https://content.arduino.cc/assets/MKRWANV1.0_sch.pdf" H 4250 4250 50  0001 C CNN
+	1    4350 3850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5E2D92EC
+P 3000 3950
+F 0 "#PWR04" H 3000 3700 50  0001 C CNN
+F 1 "GND" H 3005 3777 50  0000 C CNN
+F 2 "" H 3000 3950 50  0001 C CNN
+F 3 "" H 3000 3950 50  0001 C CNN
+	1    3000 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR03
+U 1 1 5E2D9826
+P 5750 3200
+F 0 "#PWR03" H 5750 3050 50  0001 C CNN
+F 1 "VCC" H 5767 3373 50  0000 C CNN
+F 2 "" H 5750 3200 50  0001 C CNN
+F 3 "" H 5750 3200 50  0001 C CNN
+	1    5750 3200
+	1    0    0    -1  
+$EndComp
+Text GLabel 8700 3600 0    50   Input ~ 0
+SCL
+Text GLabel 8700 3500 0    50   Input ~ 0
+SDA
+Text GLabel 5150 3850 2    50   Input ~ 0
+SCL
+Text GLabel 5150 3750 2    50   Input ~ 0
+SDA
+Wire Wire Line
+	4950 3750 5150 3750
+Wire Wire Line
+	4950 3850 5150 3850
+$Comp
+L power:GND #PWR07
+U 1 1 5E2DD493
+P 4450 5150
+F 0 "#PWR07" H 4450 4900 50  0001 C CNN
+F 1 "GND" H 4455 4977 50  0000 C CNN
+F 2 "" H 4450 5150 50  0001 C CNN
+F 3 "" H 4450 5150 50  0001 C CNN
+	1    4450 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 5150 4450 5000
+$Comp
+L power:VCC #PWR01
+U 1 1 5E2DD945
+P 3250 3000
+F 0 "#PWR01" H 3250 2850 50  0001 C CNN
+F 1 "VCC" H 3267 3173 50  0000 C CNN
+F 2 "" H 3250 3000 50  0001 C CNN
+F 3 "" H 3250 3000 50  0001 C CNN
+	1    3250 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2550 4350 2750
+Wire Wire Line
+	3800 3750 3250 3750
+Wire Wire Line
+	3250 3450 3250 3750
+Connection ~ 3250 3750
+Wire Wire Line
+	3250 3750 2900 3750
+Wire Wire Line
+	3250 3000 3250 3150
+Wire Wire Line
+	3000 3950 3000 3850
+Wire Wire Line
+	3000 3850 2900 3850
+Wire Wire Line
+	6100 4050 5750 4050
+Wire Wire Line
+	5750 3200 5750 3350
+Wire Wire Line
+	5750 3800 5750 4050
+Connection ~ 5750 4050
+Wire Wire Line
+	5750 4050 4950 4050
+Wire Wire Line
+	5750 3350 6000 3350
+Wire Wire Line
+	6000 3350 6000 3950
+Wire Wire Line
+	6000 3950 6100 3950
+Connection ~ 5750 3350
+Wire Wire Line
+	5750 3350 5750 3500
+$Comp
+L power:VCC #PWR02
+U 1 1 5E2E6C29
+P 8200 3400
+F 0 "#PWR02" H 8200 3250 50  0001 C CNN
+F 1 "VCC" H 8217 3573 50  0000 C CNN
+F 2 "" H 8200 3400 50  0001 C CNN
+F 3 "" H 8200 3400 50  0001 C CNN
+	1    8200 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5E2E6FDA
+P 8650 3900
+F 0 "#PWR05" H 8650 3650 50  0001 C CNN
+F 1 "GND" H 8655 3727 50  0000 C CNN
+F 2 "" H 8650 3900 50  0001 C CNN
+F 3 "" H 8650 3900 50  0001 C CNN
+	1    8650 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5E2E73B9
+P 6000 4300
+F 0 "#PWR06" H 6000 4050 50  0001 C CNN
+F 1 "GND" H 6005 4127 50  0000 C CNN
+F 2 "" H 6000 4300 50  0001 C CNN
+F 3 "" H 6000 4300 50  0001 C CNN
+	1    6000 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 4150 6000 4150
+Wire Wire Line
+	6000 4150 6000 4300
+$Comp
+L power:VCC #PWR0101
+U 1 1 5E2D91FA
+P 4350 2550
+F 0 "#PWR0101" H 4350 2400 50  0001 C CNN
+F 1 "VCC" H 4367 2723 50  0000 C CNN
+F 2 "" H 4350 2550 50  0001 C CNN
+F 3 "" H 4350 2550 50  0001 C CNN
+	1    4350 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Male J1
+U 1 1 5E2D6E27
+P 9050 3600
+F 0 "J1" H 9022 3482 50  0000 R CNN
+F 1 "Conn_01x06_Male" H 9022 3573 50  0000 R CNN
+F 2 "obbo_footprints:PinHeader_1x06_P2.54mm_Horizontal_Oval_NoPinSilk" H 9050 3600 50  0001 C CNN
+F 3 "~" H 9050 3600 50  0001 C CNN
+	1    9050 3600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8700 3600 8850 3600
+Wire Wire Line
+	8700 3500 8850 3500
+Wire Wire Line
+	8200 3400 8200 3800
+Wire Wire Line
+	8200 3800 8850 3800
+Wire Wire Line
+	8650 3900 8650 3700
+Wire Wire Line
+	8650 3700 8850 3700
+$EndSCHEMATC
