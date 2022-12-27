@@ -15,20 +15,21 @@ Measurements::Measurements()
 , m_ds_sensor(DS18B20(Pins::one_wire))
 {}
 
-void Measurements::Init_sensors()
+void Measurements::init_sensors()
 {
-  Bme_init();
-  Ds_thermometer_init();
+  bme_init();
+  ds_thermometer_init();
 }
 
-void Measurements::Measure(Results& results)
+void Measurements::measure(Results& results)
 {
-  Ds_thermometer_measure(results);
-  Bme_measuere(results);
-  Light_measure(results);
+  results.humidity = get_bme_humidity();
+  results.pressure = get_bme_pressure();
+  results.temperature_ds = get_ds_temperature();
+  results.light_intensity = get_light_measure();
 }
 
-void Measurements::Bme_init()
+void Measurements::bme_init()
 {
   unsigned status = m_bme_sensor.begin(BME280_ADDRESS_ALTERNATE);
   if (!status)
@@ -46,14 +47,17 @@ void Measurements::Bme_init()
   }
 }
 
-void Measurements::Bme_measuere(Results& results)
+uint8_t Measurements::get_bme_humidity()
 {
-  results.m_temperature_bme = m_bme_sensor.readTemperature();
-  results.m_pressure = m_bme_sensor.readPressure() / 100;
-  results.m_humidity = m_bme_sensor.readHumidity();
+  return m_bme_sensor.readHumidity();
 }
 
-void Measurements::Ds_thermometer_init()
+uint16_t Measurements::get_bme_pressure()
+{
+  return m_bme_sensor.readPressure() / 100;
+}
+
+void Measurements::ds_thermometer_init()
 {
   Serial.print("Serch thermometer");
   m_one_wire.reset_search();
@@ -80,12 +84,12 @@ void Measurements::Ds_thermometer_init()
   }
 }
 
-void Measurements::Ds_thermometer_measure(Results& results)
+float Measurements::get_ds_temperature()
 {
-  results.m_temperature_ds = m_ds_sensor.getTempC();
+  return m_ds_sensor.getTempC();
 }
 
-void Measurements::Light_measure(Results& results)
+uint16_t Measurements::get_light_measure()
 {
-  results.m_light_intensity = map(analogRead(Pins::light_sensor), 0, 1023, 0, 100);
+  return map(analogRead(Pins::light_sensor), 0, 1023, 0, 100);
 }

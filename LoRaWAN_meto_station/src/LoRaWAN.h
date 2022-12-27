@@ -22,5 +22,5 @@ class LoRaWAN
   private:
   String Convert_measurements_to_string(const Results& results);
   LoRaModem m_modem; ///< LoRa modem
-  const u_int8_t modem_dealy = 1000; ///< delay for stable communication with modem, in ms
+  const u_int16_t modem_dealy = 1000; ///< delay for stable communication with modem, in ms
 };

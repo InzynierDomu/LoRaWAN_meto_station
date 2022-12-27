@@ -19,15 +19,16 @@ class Measurements
 {
   public:
   Measurements();
-  void Init_sensors();
-  void Measure(Results& results);
+  void init_sensors();
+  void measure(Results& results);
 
   private:
-  void Bme_init();
-  void Bme_measuere(Results& results);
-  void Ds_thermometer_init();
-  void Ds_thermometer_measure(Results& results);
-  void Light_measure(Results& results);
+  void bme_init();
+  uint8_t get_bme_humidity();
+  uint16_t get_bme_pressure();
+  void ds_thermometer_init();
+  float get_ds_temperature();
+  uint16_t get_light_measure();
 
   Adafruit_BME280 m_bme_sensor;
   OneWire m_one_wire;

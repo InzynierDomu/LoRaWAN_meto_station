@@ -10,9 +10,9 @@
 
 struct Results
 {
-  float m_temperature_ds;
-  float m_temperature_bme;
-  int m_humidity;
-  int m_pressure;
-  int m_light_intensity;
+  float temperature_ds;
+  float temperature_bme;
+  uint8_t humidity;
+  uint16_t pressure;
+  uint16_t light_intensity;
 };

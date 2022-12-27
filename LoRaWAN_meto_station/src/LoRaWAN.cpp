@@ -99,10 +99,10 @@ void LoRaWAN::Send_msg(const String msg)
 String LoRaWAN::Convert_measurements_to_string(const Results& results)
 {
   String msg;
-  msg += "T" + String(results.m_temperature_ds);
-  msg += "H" + String(results.m_humidity);
-  msg += "P" + String(results.m_pressure);
-  msg += "L" + String(results.m_light_intensity);
+  msg += "T" + String(results.temperature_ds);
+  msg += "H" + String(results.humidity);
+  msg += "P" + String(results.pressure);
+  msg += "L" + String(results.light_intensity);
 
   return msg;
 }
