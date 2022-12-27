@@ -1,6 +1,6 @@
 # LoRaWAN meto station
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/InzynierDomu/LoRaWAN_meto_station/main.yml?branch=main?logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/InzynierDomu/LoRaWAN_meto_station/main.yml?branch=master?logo=github&style=flat-square)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/InzynierDomu/LoRaWAN_meto_station?style=flat-square)
 <a href="https://inzynierdomu.github.io/LoRaWAN_meto_station/">![GitHub docs deployments](https://img.shields.io/github/deployments/InzynierDomu/LoRaWAN_meto_station/github-pages?label=docs&logo=BookStack&logoColor=white&style=flat-square)</a>
 <a href="https://discord.gg/KmW6mHdg">![Discord](https://img.shields.io/discord/815929748882587688?logo=discord&logoColor=green&style=flat-square)</a>
