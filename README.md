@@ -1,8 +1,21 @@
 # LoRaWAN meto station
-* [Scheme](#Scheme)
-* [IDE](#IDE)
-* [Software upload](Software-upload)
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/InzynierDomu/LoRaWAN_meto_station/CI?logo=github&style=flat-square)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/InzynierDomu/LoRaWAN_meto_station?style=flat-square)
+<a href="https://inzynierdomu.github.io/LoRaWAN_meto_station/">![GitHub docs deployments](https://img.shields.io/github/deployments/InzynierDomu/LoRaWAN_meto_station/github-pages?label=docs&logo=BookStack&logoColor=white&style=flat-square)</a>
+<a href="https://discord.gg/KmW6mHdg">![Discord](https://img.shields.io/discord/815929748882587688?logo=discord&logoColor=green&style=flat-square)</a>
+![GitHub](https://img.shields.io/github/license/InzynierDomu/LoRaWAN_meto_station?style=flat-square)
+<a href="https://tipo.live/p/inzynierdomu">![support](https://img.shields.io/badge/support-tipo.live-yellow?style=flat-square)</a>
+
+- [LoRaWAN meto station](#lorawan-meto-station)
+  - [About](#about)
+  - [Scheme](#scheme)
+    - [Part list:](#part-list)
+  - [Configuration](#configuration)
+  - [IDE](#ide)
+  - [Software upload](#software-upload)
+
+## About
 More information for this project you will find in this [note](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-3/)
 ## Scheme
 ![alt text](http://www.inzynierdomu.pl/wp-content/uploads/2020/12/schemat_mkr_meteo.png)
