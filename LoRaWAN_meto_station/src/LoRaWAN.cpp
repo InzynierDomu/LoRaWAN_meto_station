@@ -13,55 +13,55 @@
  */
 void LoRaWAN::Setup()
 {
-	if (!m_modem.begin(EU868))
-	{
-		Serial.print("Failed to start module");
-		while (1)
-		{
-			//TODO: error handling
-		}
-	};
-	Serial.print("Module start correct");
-	Serial.print("Module version is: ");
-	Serial.println(m_modem.version());
-	Serial.print("Device EUI is: ");
-	Serial.println(m_modem.deviceEUI());
+  if (!m_modem.begin(EU868))
+  {
+    Serial.print("Failed to start module");
+    while (1)
+    {
+      // TODO: error handling
+    }
+  };
+  Serial.print("Module start correct");
+  Serial.print("Module version is: ");
+  Serial.println(m_modem.version());
+  Serial.print("Device EUI is: ");
+  Serial.println(m_modem.deviceEUI());
 
-	int connected = 0;
-	if (Config::auth == Authorization::OTAA)
-	{
-		connected = m_modem.joinOTAA(Config::app_eui, Config::app_key, Config::dev_eui);
-	}
-	else
-	{
-		connected = m_modem.joinABP(Config::dev_adr, Config::nw_s_key, Config::app_s_key);
-	}
+  int connected = 0;
+  if (Config::auth == Authorization::OTAA)
+  {
+    connected = m_modem.joinOTAA(Config::app_eui, Config::app_key, Config::dev_eui);
+  }
+  else
+  {
+    connected = m_modem.joinABP(Config::dev_adr, Config::nw_s_key, Config::app_s_key);
+  }
 
-	if (!connected)
-	{
-		Serial.print("Something went wrong.");
-		while (1)
-		{
-			//TODO: error handling
-		}
-	}
+  if (!connected)
+  {
+    Serial.print("Something went wrong.");
+    while (1)
+    {
+      // TODO: error handling
+    }
+  }
 
-	if (Config::const_data_rate)
-	{
-		m_modem.dataRate(0);
-	}
+  if (Config::const_data_rate)
+  {
+    m_modem.dataRate(0);
+  }
 
-	delay(modem_dealy);
+  delay(modem_dealy);
 }
 
 /**
  * @brief  Send measurements via LoRaWAN
  * @param  result: measurements to send
  */
-void LoRaWAN::Send_msg_measurements(const Results *result)
+void LoRaWAN::Send_msg_measurements(const Results& result)
 {
-	String msg = Convert_measurements_to_string(result);
-	Send_msg(msg);
+  String msg = Convert_measurements_to_string(result);
+  Send_msg(msg);
 }
 
 /**
@@ -70,25 +70,25 @@ void LoRaWAN::Send_msg_measurements(const Results *result)
  */
 void LoRaWAN::Send_msg(const String msg)
 {
-	for (unsigned int i = 0; i < msg.length(); i++)
-	{
-		Serial.print(msg[i] >> 4, HEX);
-		Serial.print(msg[i] & 0xF, HEX);
-	}
-	Serial.println();
-	
-	if(Config::const_data_rate)
-	{
-		m_modem.dataRate(0); 
-		delay(modem_dealy);
-	}
-	
-	int err;
-	m_modem.beginPacket();
-	m_modem.print(msg);
-	err = m_modem.endPacket(true);
-	Serial.println(err);
-	m_modem.sleep();
+  for (unsigned int i = 0; i < msg.length(); i++)
+  {
+    Serial.print(msg[i] >> 4, HEX);
+    Serial.print(msg[i] & 0xF, HEX);
+  }
+  Serial.println();
+
+  if (Config::const_data_rate)
+  {
+    m_modem.dataRate(0);
+    delay(modem_dealy);
+  }
+
+  int err;
+  m_modem.beginPacket();
+  m_modem.print(msg);
+  err = m_modem.endPacket(true);
+  Serial.println(err);
+  m_modem.sleep();
 }
 
 /**
@@ -96,13 +96,13 @@ void LoRaWAN::Send_msg(const String msg)
  * @param  results: measurements to convert
  * @return assembled output string
  */
-String LoRaWAN::Convert_measurements_to_string(const Results *results)
+String LoRaWAN::Convert_measurements_to_string(const Results& results)
 {
-	String msg;
-	msg += "T" + String(results->m_temperature_ds);
-	msg += "H" + String(results->m_humidity);
-	msg += "P" + String(results->m_pressure);
-	msg += "L" + String(results->m_light_intensity);
+  String msg;
+  msg += "T" + String(results.m_temperature_ds);
+  msg += "H" + String(results.m_humidity);
+  msg += "P" + String(results.m_pressure);
+  msg += "L" + String(results.m_light_intensity);
 
-	return msg;
+  return msg;
 }

@@ -6,13 +6,12 @@
  * @date 11-2019
  */
 
-#ifndef PINCONFIG_H_
-#define PINCONFIG_H_
+#include <Arduino.h>
+
+#pragma once
 
 namespace Pins
 {
-const byte one_wire = 0;	    ///< DS18B20 thermometer pin
-const byte light_sensor = A6;   ///< Photoresistor pin
+const uint8_t one_wire = 0; ///< DS18B20 thermometer pin
+const uint8_t light_sensor = A6; ///< Photoresistor pin
 } // namespace Pins
-
-#endif /* PINCONFIG_H_ */

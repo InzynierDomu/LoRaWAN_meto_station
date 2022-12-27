@@ -12,25 +12,25 @@
 #include "Measurements.h"
 #include "Pin_config.h"
 #include "Results.h"
+
 #include <Arduino.h>
 
-
-Measurements *m_measurements;
-LoRaWAN *m_lorawan;
+Measurements m_measurements;
+LoRaWAN m_lorawan;
 Results m_results;
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
   delay(60000); // TODO: test without this
-  m_measurements = new Measurements();
-  m_lorawan = new LoRaWAN();
 
-  m_lorawan->Setup();
-  m_measurements->Init_sensors();
+  m_lorawan.Setup();
+  m_measurements.Init_sensors();
 }
 
-void loop() {
-  m_measurements->Measure(&m_results);
-  m_lorawan->Send_msg_measurements(&m_results);
+void loop()
+{
+  m_measurements.Measure(m_results);
+  m_lorawan.Send_msg_measurements(m_results);
   LowPower.deepSleep(Config::uplink_interval);
 }
