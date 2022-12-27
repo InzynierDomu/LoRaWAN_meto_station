@@ -43,7 +43,6 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.9.2
         with:
             working-directory: 'LoRaWAN_meto_station'
-            doxyfile-path: 'LoRaWAN_meto_station'
         
       - name: GH Pages Deployment
         uses: peaceiris/actions-gh-pages@v3
