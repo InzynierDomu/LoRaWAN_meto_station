@@ -1,6 +1,6 @@
 # LoRaWAN meto station
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/InzynierDomu/LoRaWAN_meto_station/CI?logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/InzynierDomu/LoRaWAN_meto_station/workflows/main.yml?branch=main?logo=github&style=flat-square)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/InzynierDomu/LoRaWAN_meto_station?style=flat-square)
 <a href="https://inzynierdomu.github.io/LoRaWAN_meto_station/">![GitHub docs deployments](https://img.shields.io/github/deployments/InzynierDomu/LoRaWAN_meto_station/github-pages?label=docs&logo=BookStack&logoColor=white&style=flat-square)</a>
 <a href="https://discord.gg/KmW6mHdg">![Discord](https://img.shields.io/discord/815929748882587688?logo=discord&logoColor=green&style=flat-square)</a>
@@ -21,6 +21,7 @@ More information for this project you will find in this [note](http://www.inzyni
 ![alt text](http://www.inzynierdomu.pl/wp-content/uploads/2020/12/schemat_mkr_meteo.png)
 ### Part list:
 * U1 Arduino MKR 1300
+To board must be connected BME280 and DS18B20. 
 ## Configuration
 Before config this project, prepare an account on TheThingsNetwor. All described [heare](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-2/)
 ## IDE
