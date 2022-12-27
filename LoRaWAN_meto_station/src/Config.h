@@ -6,8 +6,9 @@
  * @date 11-2019
  */
 
-#ifndef CONFIG_H_
-#define CONFIG_H_
+#include <Arduino.h>
+
+#pragma once
 
 enum class Authorization
 {
@@ -15,7 +16,6 @@ enum class Authorization
   ABP
 };
 
-#include <Arduino.h>
 namespace Config
 {
 const Authorization auth = Authorization::OTAA; ///< LoRaWAN authorization method, ABP or OTAA
@@ -34,5 +34,3 @@ const uint8_t uplink_port = 1; ///< Port for uplink
 const uint16_t uplink_interval = 36000; ///< Uplink interval in miliseconds
 const bool const_data_rate = true;
 } // namespace Config
-
-#endif /* CONFIG_H_ */

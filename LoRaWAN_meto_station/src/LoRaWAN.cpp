@@ -11,7 +11,7 @@
 /**
  * @brief  setup and connect LoRa modem
  */
-void LoRaWAN::Setup()
+void LoRaWAN::setup()
 {
   if (!m_modem.begin(EU868))
   {
@@ -58,17 +58,17 @@ void LoRaWAN::Setup()
  * @brief  Send measurements via LoRaWAN
  * @param  result: measurements to send
  */
-void LoRaWAN::Send_msg_measurements(const Results& result)
+void LoRaWAN::send_msg_measurements(const Results& result)
 {
-  String msg = Convert_measurements_to_string(result);
-  Send_msg(msg);
+  String msg = convert_measurements_to_string(result);
+  send_msg(msg);
 }
 
 /**
  * @brief  Send message via LoRaWAN
  * @param  msg: message to send
  */
-void LoRaWAN::Send_msg(const String msg)
+void LoRaWAN::send_msg(const String msg)
 {
   for (unsigned int i = 0; i < msg.length(); i++)
   {
@@ -96,7 +96,7 @@ void LoRaWAN::Send_msg(const String msg)
  * @param  results: measurements to convert
  * @return assembled output string
  */
-String LoRaWAN::Convert_measurements_to_string(const Results& results)
+String LoRaWAN::convert_measurements_to_string(const Results& results)
 {
   String msg;
   msg += "T" + String(results.temperature_ds);

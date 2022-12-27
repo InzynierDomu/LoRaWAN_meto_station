@@ -15,12 +15,12 @@
 class LoRaWAN
 {
   public:
-  void Setup();
-  void Send_msg_measurements(const Results& results);
-  void Send_msg(const String msg);
+  void setup();
+  void send_msg_measurements(const Results& results);
+  void send_msg(const String msg);
 
   private:
-  String Convert_measurements_to_string(const Results& results);
+  String convert_measurements_to_string(const Results& results);
   LoRaModem m_modem; ///< LoRa modem
   const u_int16_t modem_dealy = 1000; ///< delay for stable communication with modem, in ms
 };

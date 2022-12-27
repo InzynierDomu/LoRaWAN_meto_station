@@ -24,13 +24,13 @@ void setup()
   Serial.begin(9600);
   delay(60000); // TODO: test without this
 
-  m_lorawan.Setup();
+  m_lorawan.setup();
   m_measurements.init_sensors();
 }
 
 void loop()
 {
   m_measurements.measure(m_results);
-  m_lorawan.Send_msg_measurements(m_results);
+  m_lorawan.send_msg_measurements(m_results);
   LowPower.deepSleep(Config::uplink_interval);
 }
