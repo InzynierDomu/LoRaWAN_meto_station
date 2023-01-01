@@ -16,7 +16,7 @@
   - [Software upload](#software-upload)
 
 ## About
-More information for this project you will find in this [note](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-3/)
+End device to measure air temperature, humidity, pressure, and light intense, and send to TTN. More information for this project you will find in this [note](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-3/)
 ## Scheme
 ![alt text](http://www.inzynierdomu.pl/wp-content/uploads/2020/12/schemat_mkr_meteo.png)
 ### Part list:
@@ -24,6 +24,8 @@ More information for this project you will find in this [note](http://www.inzyni
 To board must be connected BME280 and DS18B20. 
 ## Configuration
 Before config this project, prepare an account on TheThingsNetwor. All described [heare](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-2/)
+Need add device on TTN console to get credentials. Put necessary keys in Config.h file.
+To decode information, on TTN use JS formatter ttn_decoder.js.
 ## IDE
 The project is prepared for the Platform IO environment. A video on how to install such an environment can be watched on this [video](https://youtu.be/Em9NuebT2Kc)
 ## Software upload 
