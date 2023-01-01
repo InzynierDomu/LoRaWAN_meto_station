@@ -23,7 +23,7 @@ End device to measure air temperature, humidity, pressure, and light intense, an
 * U1 Arduino MKR 1300
 To board must be connected BME280 and DS18B20. 
 ## Configuration
-Before config this project, prepare an account on TheThingsNetwor. All described [heare](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-2/)
+Before config this project, prepare an account on TheThingsNetwor. All described [here](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-2/)
 Need add device on TTN console to get credentials. Put necessary keys in Config.h file.
 To decode information, on TTN use JS formatter ttn_decoder.js.
 ## IDE
