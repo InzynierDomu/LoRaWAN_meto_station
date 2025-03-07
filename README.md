@@ -5,7 +5,6 @@
 <a href="https://inzynierdomu.github.io/LoRaWAN_meto_station/">![GitHub docs deployments](https://img.shields.io/github/deployments/InzynierDomu/LoRaWAN_meto_station/github-pages?label=docs&logo=BookStack&logoColor=white&style=flat-square)</a>
 <a href="https://discord.gg/KmW6mHdg">![Discord](https://img.shields.io/discord/815929748882587688?logo=discord&logoColor=green&style=flat-square)</a>
 ![GitHub](https://img.shields.io/github/license/InzynierDomu/LoRaWAN_meto_station?style=flat-square)
-<a href="https://tipo.live/p/inzynierdomu">![suppor](https://img.shields.io/badge/support-tipo.live-yellow?style=flat-square)</a>
 
 - [LoRaWAN meto station](#lorawan-meto-station)
   - [About](#about)
@@ -17,6 +16,12 @@
 
 ## About
 End device to measure air temperature, humidity, pressure, and light intense, and send to TTN. More information for this project you will find in this [note](http://www.inzynierdomu.pl/lora-i-lorawan-czesc-3/)
+
+<div align="center">
+<h2>Support</h2>
+
+<p>If any of my projects have helped you in your work, studies, or simply made your day better, you can buy me a coffee. <a href="https://buycoffee.to/inzynier-domu" target="_blank"><img src="https://buycoffee.to/img/share-button-primary.png" style="width: 195px; height: 51px" alt="Postaw mi kawę na buycoffee.to"></a></p>
+</div>
 ## Scheme
 ![alt text](http://www.inzynierdomu.pl/wp-content/uploads/2020/12/schemat_mkr_meteo.png)
 ### Part list:
