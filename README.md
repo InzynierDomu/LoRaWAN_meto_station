@@ -1,4 +1,4 @@
-# LoRaWAN meto station
+# LoRaWAN meteo station
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/InzynierDomu/LoRaWAN_meto_station/main.yml?logo=github&style=flat-square)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/InzynierDomu/LoRaWAN_meto_station?style=flat-square)
