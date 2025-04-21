@@ -27,6 +27,7 @@ void Measurements::measure(Results& results)
   results.pressure = get_bme_pressure();
   results.temperature_ds = get_ds_temperature();
   results.light_intensity = get_light_measure();
+  results.soil_moisture = get_soil_moisture_measure();
 }
 
 void Measurements::bme_init()
