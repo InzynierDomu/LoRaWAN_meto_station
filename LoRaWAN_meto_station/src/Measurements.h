@@ -29,6 +29,7 @@ class Measurements
   void ds_thermometer_init();
   float get_ds_temperature();
   uint16_t get_light_measure();
+  uint16_t get_soil_moisture_measure();
 
   Adafruit_BME280 m_bme_sensor;
   OneWire m_one_wire;

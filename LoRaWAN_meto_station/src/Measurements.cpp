@@ -93,3 +93,8 @@ uint16_t Measurements::get_light_measure()
 {
   return map(analogRead(Pins::light_sensor), 0, 1023, 0, 100);
 }
+
+uint16_t Measurements::get_soil_moisture_measure()
+{
+  return map(analogRead(Pins::soil_moisture_sensor), 0, 1023, 0, 100);
+}

@@ -103,6 +103,7 @@ String LoRaWAN::convert_measurements_to_string(const Results& results)
   msg += "H" + String(results.humidity);
   msg += "P" + String(results.pressure);
   msg += "L" + String(results.light_intensity);
+  msg += "M" + String(results.soil_moisture);
 
   return msg;
 }

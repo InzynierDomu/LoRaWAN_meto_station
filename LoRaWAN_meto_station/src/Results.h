@@ -15,4 +15,5 @@ struct Results
   uint8_t humidity;
   uint16_t pressure;
   uint16_t light_intensity;
+  uint16_t soil_moisture;
 };
